@@ -17,7 +17,7 @@ def check_and_install_matplotlib():
     """
     try:
         # Intenta importar matplotlib para verificar si está instalada
-        import matplotlib.pyplot as plt
+        import matplotlib.pyplot as plt # type: ignore
         print("matplotlib ya está instalada.")
     except ImportError:
         # Si no está instalada, intenta instalarla
@@ -25,7 +25,7 @@ def check_and_install_matplotlib():
         try:
             subprocess.check_call([sys.executable, "-m", "pip", "install", "matplotlib"])
             # Intenta importar nuevamente después de la instalación
-            import matplotlib.pyplot as plt
+            import matplotlib.pyplot as plt # type: ignore
             print("Instalación completada exitosamente.")
         except subprocess.CalledProcessError as e:
             print("Error al intentar instalar matplotlib.")
@@ -60,7 +60,7 @@ def plot_point(x, y):
     :param x: Coordenada X del punto.
     :param y: Coordenada Y del punto.
     """
-    import matplotlib.pyplot as plt  # Se asegura la importación de matplotlib
+    import matplotlib.pyplot as plt  # type: ignore # Se asegura la importación de matplotlib
 
     # Cierra cualquier gráfico anterior
     plt.close()
@@ -76,7 +76,7 @@ def plot_point(x, y):
     plt.grid(True, which='both')
 
     # Define un margen alrededor del punto para mantenerlo visible
-    margin = 1.5
+    margin = 0.5
     x_margin = margin
     y_margin = margin
 
@@ -191,6 +191,7 @@ def main():
     Ejecuta el programa seleccionado y permite regresar al menú después de cada opción.
     """
     while True:
+        borrarPantalla()
         print("Seleccione el programa que desea ejecutar:")
         print("1. Analizar coordenadas")
         print("2. Contar palabras en una frase")
@@ -209,6 +210,7 @@ def main():
             sys.exit(0)  # Sale del programa con un código de éxito
         else:
             print("Opción no válida. Por favor, ingrese 1, 2 o 3.")
+            time.sleep(2)
             borrarPantalla()
 
 if __name__ == "__main__":
