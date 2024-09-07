@@ -1,6 +1,13 @@
 import unittest
 import time
 import sys
+import os
+
+def borrarPantalla(): #Definimos la función borrar pantalla
+    if os.name == "posix":
+        os.system ("clear")
+    elif os.name == "ce" or os.name == "nt" or os.name == "dos":
+        os.system ("cls")
 
 def solicitar_dato(mensaje, es_numerico=False):
     intentos = 3  # Máximo 3 intentos para cada dato
@@ -49,6 +56,7 @@ def mostrar_animacion():
 
 def mostrar_resultado(nombre, apellido_paterno, apellido_materno, edad, peso, estatura, imc, clasificacion):
     mostrar_animacion()
+    borrarPantalla()
     print("\n--- Información proporcionada ---")
     print(f"Nombre completo: {nombre} {apellido_paterno} {apellido_materno}")
     print(f"Edad: {edad} años")
@@ -62,13 +70,16 @@ def realizar_otra_operacion():
     while True:
         respuesta = input("¿Deseas calcular otro IMC? (s/n): ").lower().strip()
         if respuesta == 's':
+            borrarPantalla()
             return True
         elif respuesta == 'n':
             return False
         else:
             print("Respuesta no válida. Por favor, introduce 's' para sí o 'n' para no.")
+    
 
 def mostrar_historial(historial):
+    borrarPantalla()
     if len(historial) == 0:
         print("No hay cálculos en el historial.")
     else:
@@ -137,4 +148,6 @@ class TestIMCFunctions(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main(exit=False)
+    time.sleep(0.5)
+    borrarPantalla()
     main()
