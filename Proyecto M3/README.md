@@ -1,4 +1,4 @@
-Este programa simula el comportamiento de una **máquina de Galton**, también conocida como el "tablero de clavos", para ilustrar el concepto de **distribución normal** o **campana de Gauss**. A continuación, te detallo cómo funciona el programa y cada parte de su estructura.
+Este programa simula el comportamiento de una **máquina de Galton**, también conocida como el "tablero de clavos", para ilustrar el concepto de **distribución normal** o **campana de Gauss**.
 
 ### Descripción General:
 El programa está diseñado para simular la caída de un número determinado de bolas a través de una serie de filas de clavos, donde cada bola tiene una probabilidad igual de moverse hacia la izquierda o la derecha en cada fila. La posición final de cada bola, después de atravesar todas las filas, es registrada en compartimentos en la parte inferior, lo que genera una distribución de las bolas que se asemeja a una **distribución normal**. Luego, los resultados de esta simulación son representados gráficamente con un histograma de barras utilizando la biblioteca **matplotlib**.
