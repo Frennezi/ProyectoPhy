@@ -79,6 +79,3 @@ Este proyecto utiliza la API de [PokeAPI](https://pokeapi.co/).
 ## Licencia
 
 Este proyecto está licenciado bajo la licencia MIT. Consulta el archivo `LICENSE` para más detalles.
-```
-
-Este archivo `README.md` proporciona instrucciones claras sobre cómo instalar, usar y contribuir al proyecto de la Pokédex, así como una explicación detallada de la funcionalidad y estructura del código.
